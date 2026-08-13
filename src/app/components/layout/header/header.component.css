@@ -1,33 +1,26 @@
 .header {
-  height: var(--header-height);
-  background-color: var(--card-bg);
-  border-bottom: 1px solid var(--border-color);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+
 }
-.user-profile {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  cursor: pointer;
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0);
 }
-.avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
+
+.navbar .container {
+  background-color: rgba(0, 0, 0, 0) !important;
 }
-.name {
-  font-weight: 500;
-  color: var(--text-primary);
+
+.navbar .container .navbar-brand {
+  color: rgb(173, 178, 203);
+}
+
+.navbar .container .navbar-nav .nav-link {
+  color: rgb(173, 178, 203);
+  border-radius: 18px;
+  padding: 8px 16px;
+}
+
+.navbar .container .navbar-nav .nav-item.active .nav-link {
+  background-color: rgb(127, 68, 255) !important;
+  color: #fff !important;
 }
