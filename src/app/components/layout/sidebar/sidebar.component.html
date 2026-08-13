@@ -1,0 +1,31 @@
+<aside class="sidebar">
+  <div class="logo">
+    <span class="icon">💰</span>
+    <h2>Expenso</h2>
+  </div>
+  <nav class="nav-menu">
+    <ul>
+      <li>
+        <!-- routerLinkActiveOptions: { exact: true } kiểm tra đường dẫn chính xác active -->
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          <span class="icon">📊</span> {{'dashboard'|upperCasePipe}}
+        </a>
+      </li>
+      <li>
+        <a routerLink="/transactions" routerLinkActive="active">
+          <span class="icon">💸</span> {{'Giao dịch'|upperCasePipe}}
+        </a>
+      </li>
+      <li>
+        <a routerLink="/categories" routerLinkActive="active">
+          <span class="icon">📂</span> {{'danh mục'|upperCasePipe}}
+        </a>
+      </li>
+      <li>
+        <a routerLink="/budget" routerLinkActive="active">
+          <span class="icon">🎯</span> {{'Ngân sách'|upperCasePipe}}
+        </a>
+      </li>
+    </ul>
+  </nav>
+</aside>

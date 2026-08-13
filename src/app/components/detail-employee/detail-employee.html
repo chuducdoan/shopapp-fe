@@ -1,0 +1,12 @@
+<h4>Thông tin chi tiết nhân viên</h4>
+<hr />
+
+<div>
+  <p><strong>Mã NV:</strong> {{ employee.id }}</p>
+  <p><strong>Họ tên:</strong> {{ employee.name }}</p>
+  <p><strong>Giới tính:</strong> {{ getGender(employee.gender) }}</p>
+  <p><strong>Ngày sinh:</strong> {{ employee.dateOfBirth | date: 'dd/MM/yyyy' }}</p>
+  <p><strong>Phòng ban:</strong> {{ getDepartment(employee.department) }}</p>
+  <p><strong>Chức vụ:</strong> {{ getPosition(employee.position) }}</p>
+  <p><strong>Lương:</strong> {{ employee.salary | currency: 'VND' }}</p>
+</div>

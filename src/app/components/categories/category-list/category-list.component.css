@@ -1,0 +1,26 @@
+.page-title { margin: 0; font-weight: 700; }
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+.category-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+.cat-icon {
+  font-size: 2rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-color);
+  border-radius: var(--radius-md);
+}
+.cat-info h3 { margin: 0 0 0.5rem 0; font-size: 1rem; }
+.badge { padding: 0.25rem 0.5rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; }
+.badge-success { background: rgba(16, 185, 129, 0.1); color: var(--success-color); }
+.badge-danger { background: rgba(239, 68, 68, 0.1); color: var(--danger-color); }

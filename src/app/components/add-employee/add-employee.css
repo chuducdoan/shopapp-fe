@@ -1,0 +1,297 @@
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.form-group input:hover {
+  border-color: #007bff;
+}
+
+.form-group input:active {
+  border-color: #007bff;
+}
+
+.form-group input:disabled {
+  background-color: #f8f9fa;
+}
+
+.form-group input:read-only {
+  background-color: #f8f9fa;
+}
+
+.form-group input:invalid {
+  border-color: #dc3545;
+}
+
+.form-group input:valid {
+  border-color: #28a745;
+}
+
+.form-group input:required {
+  border-color: #28a745;
+}
+
+.form-group input:optional {
+  border-color: #28a745;
+}
+
+.form-group input:placeholder-shown {
+  border-color: #28a745;
+}
+
+.form-group input:not(:placeholder-shown) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:read-only) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:disabled) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:invalid) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:valid) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:required) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:optional) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:placeholder-shown) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:read-only) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:disabled) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:invalid) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:valid) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:required) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:optional) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:placeholder-shown) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:read-only) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:disabled) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:invalid) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:valid) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:required) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:optional) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:placeholder-shown) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:read-only) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:disabled) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:invalid) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:valid) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:required) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:optional) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:placeholder-shown) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:read-only) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:disabled) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:invalid) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:valid) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:required) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:optional) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:placeholder-shown) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:read-only) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:disabled) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:invalid) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:valid) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:required) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:optional) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:placeholder-shown) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:read-only) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:disabled) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:invalid) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:valid) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:required) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:optional) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:placeholder-shown) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:read-only) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:disabled) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:invalid) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:valid) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:required) {
+  border-color: #28a745;
+}
+
+.form-group input:not(:optional) {
+  border-color: #28a745;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.required,
+.text-danger {
+  color: #dc3545;
+}
+
+select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}

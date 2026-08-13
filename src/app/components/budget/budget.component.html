@@ -1,0 +1,40 @@
+<div class="budget-page">
+  <h1 class="page-title mb-4">Ngân sách (Tháng này)</h1>
+
+  <div class="card budget-card">
+    <div class="flex justify-between items-center mb-4">
+      <div>
+        <h3>Ngân sách chi tiêu tháng {{ currentMonth }}/{{ currentYear }}</h3>
+        <p class="text-secondary">Thiết lập giới hạn chi tiêu để quản lý tài chính tốt hơn.</p>
+      </div>
+      @if (!isEditing) {
+        <div class="budget-amount">
+          <span class="amount">{{ currentBudget?.amount || 0 | currency:'VND':'symbol':'1.0-0' }}</span>
+          <button class="btn btn-primary" (click)="isEditing = true">Sửa</button>
+        </div>
+      }
+      @if (isEditing) {
+        <div class="budget-edit flex gap-2">
+          <input type="number" class="form-control" [(ngModel)]="editAmount" min="0">
+          <button class="btn btn-success" (click)="saveBudget()">Lưu</button>
+          <button class="btn" (click)="isEditing = false">Hủy</button>
+        </div>
+      }
+    </div>
+
+    @if (currentBudget) {
+      <div class="progress-section mt-4">
+        <div class="flex justify-between mb-2">
+          <span>Đã chi: <strong>{{ expenseService.totalExpense() | currency:'VND':'symbol':'1.0-0' }}</strong></span>
+          <span>Còn lại: <strong>{{ (currentBudget.amount - expenseService.totalExpense()) | currency:'VND':'symbol':'1.0-0' }}</strong></span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" [style.width.%]="progressPercentage" [class.danger]="progressPercentage >= 90" [class.warning]="progressPercentage >= 75 && progressPercentage < 90"></div>
+        </div>
+        <p class="text-right mt-2 text-sm" [class.text-danger]="progressPercentage > 100">
+          {{ progressPercentage | number:'1.0-1' }}% ngân sách
+        </p>
+      </div>
+    }
+  </div>
+</div>

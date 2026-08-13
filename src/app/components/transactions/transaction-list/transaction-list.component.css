@@ -1,0 +1,15 @@
+.page-title { margin: 0; font-weight: 700; }
+.table { width: 100%; border-collapse: collapse; }
+.table th, .table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border-color); }
+.table th { color: var(--text-secondary); font-weight: 600; background: var(--bg-color); }
+.table tbody tr:hover { background-color: rgba(0,0,0,0.02); }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.font-bold { font-weight: 600; }
+.badge { padding: 0.25rem 0.5rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; }
+.badge-success { background: rgba(16, 185, 129, 0.1); color: var(--success-color); }
+.badge-danger { background: rgba(239, 68, 68, 0.1); color: var(--danger-color); }
+.category-badge { display: flex; align-items: center; gap: 0.5rem; }
+.action-btn { background: none; border: none; cursor: pointer; padding: 0.25rem; font-size: 1.25rem; opacity: 0.7; transition: opacity 0.2s; }
+.action-btn:hover { opacity: 1; }
+.empty-state { padding: 3rem !important; color: var(--text-secondary); }

@@ -1,0 +1,10 @@
+a,
+button {
+  cursor: pointer;
+}
+a:hover {
+  color: blue;
+}
+a:active {
+  color: red;
+}

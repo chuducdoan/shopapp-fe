@@ -1,0 +1,46 @@
+<div class="dashboard">
+  <h1 class="page-title">Tổng quan</h1>
+
+  <!-- Summary Cards -->
+  <div class="summary-cards">
+    <div class="card summary-card balance">
+      <div class="icon">💰</div>
+      <div class="details">
+        <p class="label">Tổng số dư</p>
+        <p class="amount" [class.text-danger]="expenseService.balance() < 0">
+          {{ expenseService.balance() | currency: 'VND' : 'symbol' : '1.0-0' }}
+        </p>
+      </div>
+    </div>
+
+    <div class="card summary-card income">
+      <div class="icon">📈</div>
+      <div class="details">
+        <p class="label">Tổng thu (Tháng này)</p>
+        <p class="amount text-success">
+          {{ expenseService.totalIncome() | currency: 'VND' : 'symbol' : '1.0-0' }}
+        </p>
+      </div>
+    </div>
+
+    <div class="card summary-card expense">
+      <div class="icon">📉</div>
+      <div class="details">
+        <p class="label">Tổng chi (Tháng này)</p>
+        <p class="amount text-danger">
+          {{ expenseService.totalExpense() | currency: 'VND' : 'symbol' : '1.0-0' }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Charts Area -->
+  <div class="charts-container mt-4">
+    <div class="card chart-card">
+      <h3>Chi tiêu theo danh mục</h3>
+      <div class="chart-wrapper">
+        <canvas #expenseChart></canvas>
+      </div>
+    </div>
+  </div>
+</div>

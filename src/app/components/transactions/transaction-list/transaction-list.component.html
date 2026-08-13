@@ -1,0 +1,68 @@
+<div class="transactions-page">
+  <div class="page-header flex justify-between items-center mb-4">
+    <h1 class="page-title">Giao dịch</h1>
+    <button class="btn btn-primary" (click)="openForm()">+ Thêm mới</button>
+  </div>
+
+  <div class="card">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Ngày</th>
+            <th>Danh mục</th>
+            <th>Loại</th>
+            <th>Ghi chú</th>
+            <th class="text-right">Số tiền</th>
+            <th>Thao tác</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (tx of expenseService.transactions(); track tx.id) {
+            <tr>
+              <td>{{ tx.date | date: 'dd/MM/yyyy' }}</td>
+              <td>
+                <div class="category-badge">
+                  <span>{{ getCategoryIcon(tx.categoryId) }}</span>
+                  {{ getCategoryName(tx.categoryId) }}
+                </div>
+              </td>
+              <td>
+                <span
+                  class="badge"
+                  [class.badge-success]="tx.type === 'income'"
+                  [class.badge-danger]="tx.type === 'expense'"
+                >
+                  {{ tx.type === 'income' ? 'Thu' : 'Chi' }}
+                </span>
+              </td>
+              <td>{{ tx.note || '-' }}</td>
+              <td
+                class="text-right font-bold"
+                [class.text-success]="tx.type === 'income'"
+                [class.text-danger]="tx.type === 'expense'"
+              >
+                {{ tx.type === 'income' ? '+' : '-'
+                }}{{ tx.amount | currency: 'VND' : 'symbol' : '1.0-0' }}
+              </td>
+              <td>
+                <button class="action-btn text-primary" (click)="editTx(tx)">✏️</button>
+                <button class="action-btn text-danger" (click)="deleteTx(tx.id)">🗑️</button>
+              </td>
+            </tr>
+          }
+          @if (expenseService.transactions().length === 0) {
+            <tr>
+              <td colspan="6" class="text-center empty-state">Chưa có giao dịch nào.</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  @if (showForm) {
+    <app-transaction-form [transaction]="selectedTx" (close)="closeForm()"> </app-transaction-form>
+  }
+</div>
