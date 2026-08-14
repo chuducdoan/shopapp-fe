@@ -97,3 +97,14 @@ input, select, textarea {
     background-color: rgb(19, 23, 42);
     border-color: #fff;
 }
+
+.container {
+  color: #fff;
+}
+
+.btn-gradient {
+    background: linear-gradient(to right, rgb(255, 64, 180), rgb(126, 43, 237));
+    color: #fff;
+    border-radius: 30px;
+    width: 200px;
+}

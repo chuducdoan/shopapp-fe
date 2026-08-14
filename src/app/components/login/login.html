@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 offset-md-3">
+            <div class="login-form mx-auto">
+                <h2 class="login-header">Đăng nhập</h2>
+                <div class="form-group mb-3">
+                    <label for="username">Tên đăng nhập</label>
+                    <input type="text" id="username" class="form-control" placeholder="Nhập tên đăng nhập">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="password">Mật khẩu</label>
+                    <input type="password" id="password" class="form-control" placeholder="Nhập mật khẩu">
+                </div>
+                <div class="form-group mb-3">
+                    <div class="form-check checkbox-text">
+                        <span>
+                            <input type="checkbox" class="form-check-input" id="remember">
+                            <label class="form-check-label text-start" for="remember">Ghi nhớ đăng nhập</label>
+                        </span>
+                        <a href="#" class="register-link">Quên mật khẩu</a>
+                    </div>
+                </div>
+                <div class="form-group mb-4">
+                    <select name="" class="form-control access-right">
+                        <option value="" selected disabled>Quyền đăng nhập</option>
+                        <option value="">Người dùng</option>
+                        <option value="">Quản trị viên</option>
+                    </select>
+                </div>
+                
+                <button class="btn-gradient w-100 p-2 mb-4">Đăng nhập</button>
+
+                <div class="login-footer">
+                    <p class="mt-3">Bạn chưa có tài khoản? <a [routerLink]="['/register']" class="register-link">Tạo tài khoản</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
