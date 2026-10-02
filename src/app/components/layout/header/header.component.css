@@ -24,3 +24,29 @@
   background-color: rgb(127, 68, 255) !important;
   color: #fff !important;
 }
+
+.popover-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 4px 0;
+}
+
+.popover-item {
+  color: #333;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.popover-item:hover {
+  background-color: #f0f0f0;
+  color: rgb(127, 68, 255);
+}
+
+.popover .popover-header {
+  color: #000 !important;
+  display: none;
+}

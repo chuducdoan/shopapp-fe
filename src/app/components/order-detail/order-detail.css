@@ -47,3 +47,11 @@ th, td {
     border-radius: 30px;
     width: 200px;
 }
+
+input.form-control {
+    background-color: #fff;
+}
+
+input::placeholder {
+    color: #4f4e4e !important;
+}

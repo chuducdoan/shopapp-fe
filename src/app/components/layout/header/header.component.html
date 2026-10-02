@@ -8,20 +8,36 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" [routerLink]="['/home']">Home</a>
+          <li class="nav-item" [ngClass]="{'active': activeNavItem === 0}">
+            <a class="nav-link" [routerLink]="['/home']" (click)="handleItemClick(0)">Trang chủ</a>
+          </li>
+          <li class="nav-item" [ngClass]="{'active': activeNavItem === 1}">
+            <a class="nav-link" [routerLink]="['/orders']" (click)="handleItemClick(1)">Thông báo</a>
+          </li>
+          <li class="nav-item" [ngClass]="{'active': activeNavItem === 2}">
+            <a class="nav-link" [routerLink]="['/orders']" (click)="handleItemClick(2)">Giỏ hàng</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/order']">Order</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/order-confirm']">Order Confirm</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/login']">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/detail-product']">Detail Product</a>
+            
+            <ng-container *ngIf="userResponse !== null">
+              <a class="nav-link" 
+                 [ngbPopover]="popoverContent"
+                 popoverTitle="User Actions"
+                 triggers="click"
+                 [placement]="['bottom', 'top']">
+                {{userResponse.full_name}}
+              </a>
+              <ng-template #popoverContent>
+                <div class="popover-list">
+                  <a class="popover-item" href="javascript:void(0)" (click)="handleItemClick(0)">Tài khoản của tôi</a>
+                  <a class="popover-item" href="javascript:void(0)" (click)="handleItemClick(1)">Đơn mua</a>
+                  <a class="popover-item" href="javascript:void(0)" (click)="handleItemClick(2)">Đăng xuất</a>
+                </div>
+              </ng-template>
+            </ng-container>
+            <ng-container *ngIf="!userResponse || userResponse === null">
+              <a class="nav-link" [routerLink]="['/login']">Đăng nhập</a>
+            </ng-container>
           </li>
         </ul>
       </div>

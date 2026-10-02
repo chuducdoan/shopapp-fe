@@ -6,34 +6,52 @@
     </div>
 
     <div class="search-box">
-        <input type="text" class="form-control search-input" placeholder="Tìm sản phẩm">
-        <select class="form-control product-category">
-            <option value="" selected disabled>Danh mục sản phẩm</option>
-            <option value="">Đồ điện tử</option>
-            <option value="">Bánh kẹo</option>
+        <input type="text" class="form-control search-input" placeholder="Tìm sản phẩm" [(ngModel)]="keyword">
+        <select class="form-control product-category" [(ngModel)]="selectedCategoryId">
+            <option value="0">Tất cả</option>
+            <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
         </select>
+        <button class="btn btn-primary" (click)="searchProducts()" style="margin-left: 8px;">Tìm kiếm</button>
     </div>
 
     <div class="row">
-        <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let product of products">
             <div class="product-item">
-                <img src="https://i.pinimg.com/1200x/82/e2/bd/82e2bd6dca1e2dcc65fecaa3dbebed22.jpg" alt="product image" class="product-image">
-                <h3 class="product-name">Product 1</h3>
-                <p class="product-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                <p class="product-warranty">Bảo hành: 12 tháng</p>
-                <p class="product-price">Giá: <del>$200</del> $100</p>
-                <div class="product-rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
+                <div (click)="onDetailClick(product.id)" style="cursor: pointer;">
+                    <img src="{{ product.thumbnail }}" alt="product image" class="product-image">
+                    <h3 class="product-name">{{ product.name }}</h3>
+                    <p class="product-desc">{{ product.description }}</p>
+                    <p class="product-price">Giá: {{product.price}}</p>
+                    <div class="product-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
                 </div>
                 <div class="product-action">
-                    <button type="button" class="btn btn-primary">Thêm vào giỏ hàng</button>
+                    <button type="button" class="btn btn-primary" (click)="addCart(product.id)">Thêm vào giỏ hàng</button>
                     <button class="btn btn-success">Mua ngay</button>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+<div class="d-flex justify-content-center">
+    <nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item" *ngIf="currentPage > 1"><a class="page-link" href="#"
+                (click)="onPageChange(1, $event)">First</a></li>
+        <li class="page-item" *ngIf="currentPage > 1"><a class="page-link" href="#"
+                (click)="onPageChange(currentPage - 1, $event)">Previous</a></li>
+        <li class="page-item" *ngFor="let page of visiblePages"><a class="page-link" href="#"
+                (click)="onPageChange(page, $event)" [ngClass]="{'active': page === currentPage}">{{page}}</a></li>
+        <li class="page-item" *ngIf="currentPage < totalPage"><a class="page-link" href="#"
+                (click)="onPageChange(currentPage + 1, $event)">Next</a></li>
+        <li class="page-item" *ngIf="currentPage < totalPage"><a class="page-link" href="#"
+                (click)="onPageChange(totalPage, $event)">Last</a></li>
+    </ul>
+</nav>
 </div>
